@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Security Check: Redirect to login if not authenticated -->
+    <script>
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+            window.location.replace("login.html");
+        }
+    </script>
+</head>
+<body class="welcome-body">
+    <div class="welcome-container">
+        <h1>Welcome to the DSA Visualizer</h1>
+        <p>Interactive animations to help you understand Sorting, Searching, Arrays, and Stacks.</p>
+        <div class="features-list">
+            <p>📊 2 Sorting Algorithms</p>
+            <p>🔍 2 Searching Algorithms</p>
+            <p>📚 Stack Data Structure</p>
+            <p>🔢 5 Array Problems</p>
+        </div>
+        <a href="index.html" class="start-link">Start Learning</a>
+        
+        <br>
+        <button onclick="logout()" style="margin-top: 15px; background-color: #e74c3c; padding: 10px 20px; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Logout</button>
+    </div>
+
+    <!-- Logout Script -->
+    <script>
+        function logout() {
+            sessionStorage.removeItem("isLoggedIn");
+            window.location.replace("login.html");
+        }
+    </script>
+</body>
+</html>
