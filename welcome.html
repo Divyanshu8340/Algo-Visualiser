@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualizer - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+            window.location.replace("index.html");
+        }
+    </script>
+</head>
+<body class="welcome-body">
+    <div class="welcome-container dashboard-box">
+        <h1 class="gradient-text">Welcome to the Lab</h1>
+        <p class="subtitle">Interactive animations to master Data Structures and Algorithms.</p>
+        
+        <div class="features-grid">
+            <div class="feature-card">📊 2 Sorting Algos</div>
+            <div class="feature-card">🔍 2 Searching Algos</div>
+            <div class="feature-card">📚 Stack Operations</div>
+            <div class="feature-card">🔢 5 Array Problems</div>
+        </div>
+
+        <div class="dashboard-actions">
+            <a href="visualizer.html" class="primary-btn start-btn">Launch Visualizer</a>
+            <button onclick="logout()" class="danger-btn">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            sessionStorage.removeItem("isLoggedIn");
+            window.location.replace("index.html");
+        }
+    </script>
+</body>
+</html>

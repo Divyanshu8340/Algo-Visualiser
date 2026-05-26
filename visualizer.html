@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Algorithms Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem("isLoggedIn") !== "true") {
+            window.location.replace("index.html");
+        }
+    </script>
+</head>
+<body>
+    <div class="app-header">
+        <div class="header-top">
+            <h1 class="gradient-text">Algorithm Visualizer</h1>
+            <button onclick="window.location.href='welcome.html'" class="secondary-btn small-btn">Back to Dashboard</button>
+        </div>
+
+        <div class="toolbar">
+            <div class="tool-group">
+                <select id="algo-select" class="modern-select">
+                    <optgroup label="Sorting">
+                        <option value="bubbleSort">1. Bubble Sort</option>
+                        <option value="selectionSort">2. Selection Sort</option>
+                    </optgroup>
+                    <optgroup label="Searching">
+                        <option value="linearSearch">3. Linear Search</option>
+                        <option value="binarySearch">4. Binary Search</option>
+                    </optgroup>
+                    <optgroup label="Stack">
+                        <option value="stackOps">5. Stack (Push & Pop)</option>
+                    </optgroup>
+                    <optgroup label="Array Problems">
+                        <option value="reverseArray">6. Reverse an Array</option>
+                        <option value="findMax">7. Find Maximum Element</option>
+                        <option value="moveZeroes">8. Move Zeroes to End</option>
+                        <option value="twoPointerSum">9. Two Pointer Pair Sum</option>
+                        <option value="palindromeArray">10. Check Palindrome Array</option>
+                    </optgroup>
+                </select>
+                <button id="generate-btn" class="secondary-btn">Random Array</button>
+                <button id="start-btn" class="primary-btn run-btn">▶ Visualize</button>
+            </div>
+            
+            <div class="tool-group">
+                <input type="text" id="custom-array-input" class="modern-input" placeholder="e.g. 10, 20, 30, 20, 10">
+                <button id="apply-input-btn" class="secondary-btn">Apply Custom</button>
+            </div>
+
+            <div class="tool-group speed-group">
+                <label for="speed-slider">Speed</label>
+                <input type="range" id="speed-slider" min="1" max="100" value="50">
+            </div>
+        </div>
+
+        <h3 id="status-text" class="status-bar">Select an algorithm and click Visualize</h3>
+    </div>
+    
+    <div class="visualizer-stage">
+        <div id="array-container" class="container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
